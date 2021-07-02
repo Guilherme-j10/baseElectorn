@@ -6,6 +6,8 @@ const createWindow = () => {
   const window = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    show: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -15,7 +17,13 @@ const createWindow = () => {
 
   const urlToStart = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`;
 
+  window.setBackgroundColor = '#333';
+  window.menuBarVisible = false;
   window.loadURL(urlToStart);
+
+  window.once('ready-to-show', () => {
+    window.show();
+  });
 }
 
 app.whenReady().then(() => {
