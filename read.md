@@ -22,7 +22,7 @@ base Scripts
 
 Observações
 
-- Para gerar uma build do desktopapp com react, primeiro é necessário buildar o app react, depois que a pasta build estivar gerada você pode rodar o comando para gerar npm run pack ou npm run dist, para gerar um executavel do desktopapp.
+- Para gerar uma build do desktopapp com react, primeiro é necessário buildar o app react, depois que a pasta build estivar gerada você pode rodar o comando npm run pack ou npm run dist, para gerar um executavel do desktopapp.
 
 - Se faz necessário falar para o react qual é baseUrl do servidor, para que quando acessar o /build/index.html não venha uma página em branco, então adicione ao package.json "homepage": "." e execute npm run build, e pronto, o electron vai renderizar corretamente o conteudo de /build/index.html, caso você tente file://C:/<seusDiretórios>/build/index.html você ainda verá uma tela em branco, pois o chrome irá gerar um erro de CORS.
 
